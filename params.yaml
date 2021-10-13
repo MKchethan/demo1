@@ -3,7 +3,7 @@ base:
   random_state: 42
   target_col: class
 
-datasource:
+data_source:
   s3_source: data_given/BankNote_Authentication.csv
 
 load_data:
@@ -19,5 +19,6 @@ estimators:
     params:
       max_depth: 8
       n_estimators: 50
+
 model_dir: saved_models
 

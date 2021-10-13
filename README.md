@@ -36,3 +36,8 @@ git remote add origin https://github.com/MKchethan/demo1.git
 git branch -M main
 git push -u origin main
 ```
+
+```bash 
+git add . && git commit -m "parameters added" && git push origin main
+```
+
