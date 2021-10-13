@@ -1,0 +1,10 @@
+stages:
+  load_data:
+    cmd: python src/load_data.py --config=params.yaml
+    deps:
+      - src/get_data.py
+      - src/load_data.py
+      - data_given/BankNote_Authentication.csv
+    outs:
+      - data/raw/BankNote_Authentication.csv
+
