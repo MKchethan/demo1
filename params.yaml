@@ -1,0 +1,23 @@
+base:
+  project: Banknote_Authentication
+  random_state: 42
+  target_col: class
+
+datasource:
+  s3_source: data_given/BankNote_Authentication.csv
+
+load_data:
+  raw_dataset_csv: data/raw/BankNote_Authentication.csv
+
+split_data:
+  train_path: data/processed/train_BankNote_Authentication.csv
+  test_path: data/processed/test_BankNote_Authentication.csv
+  test_size: 0.2
+
+estimators:
+  RandomForestClassifier:
+    params:
+      max_depth: 8
+      n_estimators: 50
+model_dir: saved_models
+

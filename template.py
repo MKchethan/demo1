@@ -15,7 +15,7 @@ for d in dirs:
 
 files = [
     "dvc.yaml",
-    "params.yaml"
+    "params.yaml",
     ".gitignore",
     os.path.join("src", "__init__.py")
 ]
