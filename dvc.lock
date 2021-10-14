@@ -16,3 +16,22 @@ stages:
     - path: data/raw/BankNote_Authentication.csv
       md5: d646019d27c00893f7c640cfa03198cc
       size: 46446
+  split_data:
+    cmd: python src/split_data.py --config=params.yaml
+    deps:
+    - path: data/raw/BankNote_Authentication.csv
+      md5: d646019d27c00893f7c640cfa03198cc
+      size: 46446
+    - path: src/get_data.py
+      md5: d556ef5355db7106fe2c2413d68c6b01
+      size: 856
+    - path: src/split_data.py
+      md5: 976d016124f616fbcfe70e458585dc47
+      size: 1083
+    outs:
+    - path: data/processed/test_BankNote_Authentication.csv
+      md5: 771e41b8bcb76da766cc5b27d87ed003
+      size: 9333
+    - path: data/processed/train_BankNote_Authentication.csv
+      md5: 50e882949a947c33b7cd85f4f600c0e1
+      size: 37155

@@ -42,5 +42,20 @@ git add . && git commit -m "parameters added" && git push origin main
 ```
 
 ```bash 
+touch src/get_data.py
+dvc repro
 git add . && git commit -m "get_data added" && git push origin main
+```
+
+```bash
+touch src/load_data.py
+dvc repro
+git add . && git commit -m "load_data added" && git push origin main
+```
+
+```bash
+touch src/split_data.py
+python src/split_data.py
+dvc repro
+git add . && git commit -m "load_data added" && git push origin main
 ```

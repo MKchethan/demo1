@@ -8,3 +8,12 @@ stages:
     outs:
       - data/raw/BankNote_Authentication.csv
 
+  split_data:
+    cmd: python src/split_data.py --config=params.yaml
+    deps:
+      - src/split_data.py
+      - src/get_data.py
+      - data/raw/BankNote_Authentication.csv
+    outs:
+      - data/processed/test_BankNote_Authentication.csv
+      - data/processed/train_BankNote_Authentication.csv
