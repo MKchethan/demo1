@@ -56,12 +56,14 @@ def train_and_evaluate(config_path):
         scores={
             "Acuuracy": accuracy
         }
+        json.dump(scores, f, indent=4)
 
     with open(params_files, "w") as f:
         params={
             "max_depth": max_depth,
             "n_estimators": n_estimators
         }
+        json.dump(params, f, indent=4)
 
 
     os.makedirs(model_dir, exist_ok=True)
