@@ -59,3 +59,10 @@ python src/split_data.py
 dvc repro
 git add . && git commit -m "load_data added" && git push origin main
 ```
+
+```bash
+touch src/train_and_evaluate.py
+python src/train_and_evaluate.py
+dvc repro
+git add . && git commit -m "trained and evaluated" && git push origin main
+```

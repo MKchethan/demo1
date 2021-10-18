@@ -35,3 +35,29 @@ stages:
     - path: data/processed/train_BankNote_Authentication.csv
       md5: 50e882949a947c33b7cd85f4f600c0e1
       size: 37155
+  train_and_evaluate:
+    cmd: python src/train_and_evaluate.py --config=params.yaml
+    deps:
+    - path: data/processed/test_BankNote_Authentication.csv
+      md5: 771e41b8bcb76da766cc5b27d87ed003
+      size: 9333
+    - path: data/processed/train_BankNote_Authentication.csv
+      md5: 50e882949a947c33b7cd85f4f600c0e1
+      size: 37155
+    - path: src/train_and_evaluate.py
+      md5: bd0631e75db62bb7b3a24f862e643e59
+      size: 2387
+    params:
+      params.yaml:
+        estimators.RandomForestClassifier.params.max_depth: 8
+        estimators.RandomForestClassifier.params.n_estimators: 50
+    outs:
+    - path: report/params.json
+      md5: d41d8cd98f00b204e9800998ecf8427e
+      size: 0
+    - path: report/scores.json
+      md5: d41d8cd98f00b204e9800998ecf8427e
+      size: 0
+    - path: saved_models/model.joblib
+      md5: 0e8a6ace7c8dc0ca578c510d7b6bc830
+      size: 199127
