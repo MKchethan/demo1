@@ -6,3 +6,6 @@ dvc
 dvc[gdrive]
 sklearn
 pandas
+flask
+gunicorn
+
