@@ -66,3 +66,30 @@ python src/train_and_evaluate.py
 dvc repro
 git add . && git commit -m "trained and evaluated" && git push origin main
 ```
+
+tracking reports 
+```bash
+mkdir report
+touch report/params.json
+touch report/scores.json
+```
+
+tracking added
+```bash
+dvc repro
+dvc params diff
+dvc metrics show
+dvc metrics diff
+```
+
+```bash
+touch setup.py
+pip install -e .
+git add . && git commit -m "setup done" && git push origin main
+```
+
+intsall jupyter notebooks
+```bash
+pip install jupyterlab
+jupyter-lab notebooks/
+```

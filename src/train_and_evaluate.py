@@ -47,21 +47,21 @@ def train_and_evaluate(config_path):
     accuracy = eval_metrics(test_y, predicted)
 
     print("Random Forest (max_depth=%f, n_estimators=%f):" % (max_depth, n_estimators))
-    print("  Accuracy: %s" % accuracy)
+    print("Accuracy: %s" % accuracy)
 
-    scores_files = config["reports"]["scores"]
-    params_files = config["reports"]["params"]
+    scores_file = config["reports"]["scores"]
+    params_file = config["reports"]["params"]
 
-    with open(scores_files, "w") as f:
-        scores={
-            "Acuuracy": accuracy
+    with open(scores_file, "w") as f:
+        scores = {
+            "Accuracy": accuracy
         }
         json.dump(scores, f, indent=4)
 
-    with open(params_files, "w") as f:
-        params={
+    with open(params_file, "w") as f:
+        params = {
             "max_depth": max_depth,
-            "n_estimators": n_estimators
+            "n_estimators": n_estimators,
         }
         json.dump(params, f, indent=4)
 
