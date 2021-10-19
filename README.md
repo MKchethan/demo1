@@ -93,3 +93,30 @@ intsall jupyter notebooks
 pip install jupyterlab
 jupyter-lab notebooks/
 ```
+
+After train and evaluate stage
+```bash
+mkdir prediction_service\model
+mkdir webapp
+touch app.py
+touch prediction_service/__init__.py
+touch prediction_service/prediction.py
+mkdir webapp\static\css
+mkdir webapp\static\script
+touch webapp/static/css/main.css
+touch webapp/static/script/index.js
+mkdir webapp/templates
+touch webapp/templates/base.html
+touch webapp/templates/index.html
+touch webapp/templates/404.html
+```
+
+```bash
+git add . && git commit -m "web structure added" && git push origin main
+```
+
+copying the model.joblib from saved models to prediction_service
+```bash
+cp saved_models/model.joblib prediction_service/model
+```
+
