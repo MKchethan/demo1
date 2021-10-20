@@ -120,3 +120,8 @@ copying the model.joblib from saved models to prediction_service
 cp saved_models/model.joblib prediction_service/model
 ```
 
+```bash
+git add . && git commit -m "app created" && git push origin main
+```
+
+
